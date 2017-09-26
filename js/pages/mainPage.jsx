@@ -7,8 +7,21 @@ export default class MainPage extends React.Component {
         this.state = {
             foodList: [],
             currentFoodIndex: 0,
-            errorMessage: undefined
+            errorMessage: undefined,
+            likes: [],
+            dislikes: []
         };
+    }
+    handlePhotoAction (action) {
+        const { likes, dislikes, foodList, currentFoodIndex } = this.state;
+
+        if (action === "like") {
+            likes.push(foodList[currentFoodIndex]);
+        } else {
+            dislikes.push(foodList[currentFoodIndex]);
+        }
+
+        this.setState({ likes, dislikes, currentFoodIndex: currentFoodIndex + 1 });
     }
     componentDidMount () {
         fetch("http:localhost:1234/")
@@ -20,7 +33,7 @@ export default class MainPage extends React.Component {
         const { errorMessage, foodList, currentFoodIndex } = this.state;
 
         return (
-            foodList.length === 0 ? <div>{errorMessage}</div> : <PhotoComponent food={foodList[currentFoodIndex]} /> 
+            foodList.length === 0 ? <div>{errorMessage}</div> : <PhotoComponent onClickAction={this.handlePhotoAction.bind(this)} food={foodList[currentFoodIndex]} /> 
         );
     }
 };

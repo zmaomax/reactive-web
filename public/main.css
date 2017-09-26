@@ -1,2 +1,18 @@
-.photo-component {
-  background: blue; }
+.photo-component .food {
+  width: 40vw;
+  position: relative;
+  color: #10c64e; }
+  .photo-component .food .image {
+    width: 100%; }
+  .photo-component .food .title {
+    font-size: 30px;
+    padding: 10px; }
+  .photo-component .food .controls {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center; }
+  .photo-component .food .button {
+    margin: 10px; }

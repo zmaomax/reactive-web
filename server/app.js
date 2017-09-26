@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
         });
     }
 
-    const mealsPromises = _.fill(Array(10), getRandomMeal());
+    const mealsPromises = _.map(Array(10), () => getRandomMeal());
     Promise.all(mealsPromises).then((response) => res.json(response));
     
 });

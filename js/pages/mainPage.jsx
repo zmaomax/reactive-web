@@ -13,7 +13,8 @@ export default class MainPage extends React.Component {
         };
     }
     handlePhotoAction (action) {
-        const { likes, dislikes, foodList, currentFoodIndex } = this.state;
+        let { currentFoodIndex } = this.state;
+        const { likes, dislikes, foodList } = this.state;
 
         if (action === "like") {
             likes.push(foodList[currentFoodIndex]);
@@ -21,19 +22,39 @@ export default class MainPage extends React.Component {
             dislikes.push(foodList[currentFoodIndex]);
         }
 
-        this.setState({ likes, dislikes, currentFoodIndex: currentFoodIndex + 1 });
+        currentFoodIndex += 1; 
+
+        if (currentFoodIndex === foodList.length - 1) {
+            this.getFoodList()
+                .then((newFoodList) => {
+                    this.setState({ foodList: foodList.concat(newFoodList), currentFoodIndex });
+                });
+        }
+
+        this.setState({ likes, dislikes, currentFoodIndex });
+    }
+    getFoodList () {
+        return fetch("http:localhost:1234/")
+            .then((response) => response.json());
     }
     componentDidMount () {
-        fetch("http:localhost:1234/")
-            .then((response) => response.json())
+        this.getFoodList()
             .then((foodList) => this.setState({ foodList }))
             .catch((error) => this.setState({ errorMessage: error }));
     }
     render () {
-        const { errorMessage, foodList, currentFoodIndex } = this.state;
+        const { errorMessage, foodList, currentFoodIndex, likes, dislikes } = this.state;
+        
+        if (foodList.length === 0 || errorMessage) {
+            return <div>{errorMessage}</div>;
+        }  
 
         return (
-            foodList.length === 0 ? <div>{errorMessage}</div> : <PhotoComponent onClickAction={this.handlePhotoAction.bind(this)} food={foodList[currentFoodIndex]} /> 
+            <div className="main-page">
+                <div>likes {likes.length}</div>
+                <div>dislikes {dislikes.length}</div>
+                <PhotoComponent onClickAction={this.handlePhotoAction.bind(this)} food={foodList[currentFoodIndex]} /> 
+            </div>
         );
     }
 };

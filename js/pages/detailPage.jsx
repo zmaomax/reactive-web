@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PhotoComponent from '../components/photoComponent';
 
 export default class MainPage extends React.Component {
@@ -27,19 +28,24 @@ export default class MainPage extends React.Component {
         const { name, category, area, instructions, img: url, source, ingredients} = this.state.food;
 
         return (
-            <article className="food-detail">
-                <section>
-                    <h1>{name}</h1>
-                    <img src={url} />
+            <section className="food-detail">
+                <nav>
+                    <Link to={{ pathname: "/" }} className="back nav-item"> Back </Link>
+                </nav>
+                <heading className="title text-center">
+                    <span>{name}</span>
+                </heading>
+                <img className="recipe-img" src={url} />
+                <article>
                     <p>{instructions}</p>
-                </section>
-                <section>
+                </article>
+                <article>
                     <h2>Ingredients</h2>
                     <ul>
                         {ingredients.map((i) => <li>{i.measure} {i.ingredient}</li>)}
                     </ul>
-                </section>
-            </article>
+                </article>
+            </section>
         );
     }
 };

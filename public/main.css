@@ -42,6 +42,42 @@ h1, h2, h3, h4, h5, h6 {
   .page-container .title-page {
     border-bottom: solid 2px #eee;
     margin-top: 2.2em; }
+  .page-container .title {
+    font-size: 1.1em;
+    padding: 3% 3%;
+    color: #2f2f2f;
+    min-height: 2.7em;
+    display: table;
+    width: 94%; }
+    .page-container .title span {
+      vertical-align: middle;
+      display: table-cell; }
+
+nav .nav-item {
+  height: 2em;
+  display: inline-block;
+  padding: 0.5em 1em; }
+
+nav a {
+  text-decoration: none;
+  color: #2f2f2f;
+  font-size: 0.9em; }
+  nav a.back:before {
+    content: "<";
+    font-family: "ProximaNovaBoldFont";
+    font-size: 1.5em;
+    vertical-align: middle; }
+
+section.food-detail {
+  height: 36em;
+  overflow-y: scroll;
+  padding-bottom: 2em; }
+
+section .recipe-img {
+  width: 100%; }
+
+section article {
+  padding: 0 1em; }
 
 @font-face {
   font-family: 'ProximaNovaBoldFont';
@@ -62,16 +98,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #10c64e; }
   .photo-component .food .image {
     width: 100%; }
-  .photo-component .food .title {
-    font-size: 1.1em;
-    padding: 3% 3%;
-    color: #2f2f2f;
-    min-height: 2.7em;
-    display: table;
-    width: 94%; }
-    .photo-component .food .title span {
-      vertical-align: middle;
-      display: table-cell; }
   .photo-component .food .controls {
     text-align: center; }
   .photo-component .food .button {

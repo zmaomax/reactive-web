@@ -1,0 +1,16 @@
+section {
+
+    &.food-detail {
+        height: 36em;
+        overflow-y: scroll;
+        padding-bottom: 2em;
+    }
+
+    .recipe-img {
+        width: 100%;
+    }
+
+    article {
+        padding: 0 1em;
+    }
+}

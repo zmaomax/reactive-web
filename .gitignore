@@ -1,5 +1,6 @@
 public/bundle.js
 node_modules/
 .DS_Store
-public/*bundle*
+public/
 *.log
+*.lock

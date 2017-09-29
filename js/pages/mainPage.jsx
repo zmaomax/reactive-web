@@ -40,7 +40,8 @@ export default class MainPage extends React.Component {
     this.setState({ likes, dislikes, currentFoodIndex, dislikesPercentage, likesPercentage });
   }
   getFoodList() {
-    return fetch('http:localhost:1234/').then(response => response.json());
+    return fetch("/food")
+    .then((response) => response.json());
   }
   componentDidMount() {
     this.getFoodList()
@@ -63,10 +64,7 @@ export default class MainPage extends React.Component {
     }
 
     return (
-      <div className="main-page page-container">
-        <div className="title-page">
-          <h2 className="text-center">Z-Foodies</h2>
-        </div>
+      <div>
         <PhotoComponent onClickAction={this.handlePhotoAction.bind(this)} food={foodList[currentFoodIndex]} />
         <div className="bar-wrapper">
           <p className="sub-title text-white text-center">My recipes</p>

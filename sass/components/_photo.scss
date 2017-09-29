@@ -1,6 +1,6 @@
 .photo-component {
+
     .food {
-        width: 40vw;
         position: relative;
         color: #10c64e;
 
@@ -9,21 +9,28 @@
         }
 
         .title {
-            font-size: 30px;
-            padding: 10px;
+            font-size: 1.1em;
+            padding: 0.5em;
+            color: #2f2f2f;
+            min-height: 2.7em;
+            display: table;
+            width: 100%;
+
+            span {
+                vertical-align: middle;
+                display: table-cell;
+            }
+            
         }
 
         .controls {
-            background-color: rgba(0, 0, 0, .7);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
             text-align: center;
         }
 
         .button {
-            margin: 10px;
+            width: 3em;
+            cursor: pointer;
+            padding: 0.5em;
         }
     }
 }

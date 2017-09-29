@@ -15,9 +15,11 @@
     "css-loader": "^0.28.7",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "file-loader": "^0.11.2",
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "url-loader": "^0.5.9",
     "webpack": "^3.6.0"
   },
   "devDependencies": {

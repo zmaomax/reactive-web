@@ -5,7 +5,7 @@ import style from '../sass/app.scss';
 
 const App = () => (
   <div className="app">
-    <div className="landing">
+    <div className="iphone-wrap">
       <MainPage />
     </div>
   </div>

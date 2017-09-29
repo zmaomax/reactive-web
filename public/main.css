@@ -22,14 +22,22 @@ h1, h2, h3, h4, h5, h6 {
   padding: 3em; }
 
 .iphone-wrap {
-  background: url(c1032f032388a3a53de6cc8c3aabebb5.png);
   margin: auto;
   width: 23em;
   height: 46em;
-  background-size: contain; }
+  position: relative; }
+
+.iphone-mask {
+  background: url(c1032f032388a3a53de6cc8c3aabebb5.png);
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  position: absolute;
+  z-index: 9;
+  pointer-events: none; }
 
 .page-container {
-  padding: 1.5em 1.6em 1.5em 1.5em;
+  padding: 1.5em;
   height: 43em; }
   .page-container .title-page {
     border-bottom: solid 2px #eee;
@@ -56,11 +64,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%; }
   .photo-component .food .title {
     font-size: 1.1em;
-    padding: 0.5em;
+    padding: 3% 3%;
     color: #2f2f2f;
     min-height: 2.7em;
     display: table;
-    width: 100%; }
+    width: 94%; }
     .photo-component .food .title span {
       vertical-align: middle;
       display: table-cell; }
@@ -95,9 +103,7 @@ h1, h2, h3, h4, h5, h6 {
       -o-transition: height 1s; }
 
 .bar-wrapper {
-  border-bottom-right-radius: 2.1em;
   overflow: hidden;
-  background: #444;
-  border-bottom-left-radius: 2.1em; }
+  background: #444; }
   .bar-wrapper .sub-title {
     margin: 0.6em 0 1.4em; }

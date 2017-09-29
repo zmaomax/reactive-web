@@ -6,6 +6,7 @@ import style from '../sass/app.scss';
 const App = () => (
   <div className="app">
     <div className="iphone-wrap">
+      <div className="iphone-mask" />
       <MainPage />
     </div>
   </div>

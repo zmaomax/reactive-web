@@ -2,16 +2,26 @@
     padding: 3em;
 }
 
-.iphone-wrap {
-    background: url("../assets/img/iphone-x-case.png");
-    margin: auto;
-    width: 23em;
-    height: 46em;
-    background-size: contain;
+.iphone {
+    &-wrap {
+        margin: auto;
+        width: 23em;
+        height: 46em;
+        position: relative;
+    }
+    &-mask {
+        background: url("../assets/img/iphone-x-case.png");
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        position: absolute;
+        z-index: 9;
+        pointer-events: none;
+    }
 }
 
 .page-container {
-    padding: 1.5em 1.6em 1.5em 1.5em;
+    padding: 1.5em;
     height: 43em;
 
     .title-page {

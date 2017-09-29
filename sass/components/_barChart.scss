@@ -1,0 +1,40 @@
+.bar-chart-container {
+
+    width: 50%;
+    height: 5.3em;
+    position: relative;
+    display: inline-block;
+
+    .bar-container {
+        > img {
+            width: 100%;
+        }
+
+        .amount {
+            position: absolute;
+            z-index: 9999;
+            bottom: 1em;
+            width: 100%;
+        }
+
+        .bar {
+            transition: height 1s;
+            -webkit-transition: height 1s; 
+            -moz-transition: height 1s; 
+            -ms-transition: height 1s; 
+            -o-transition: height 1s; 
+        }
+
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+.bar-wrapper {
+    overflow: hidden;
+    background: #444;
+
+    .sub-title{
+        margin: 0.6em 0 1.4em;
+    }
+}

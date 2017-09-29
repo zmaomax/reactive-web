@@ -1,5 +1,13 @@
+//global
+@import "./global/normalize";
+
 //Pages
 @import "./pages/main";
 
+//Fonts
+@import "./fonts/proxima-bold";
+@import "./fonts/proxima-regular";
+
 //Components
 @import "./components/photo";
+@import "./components/barChart";

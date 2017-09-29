@@ -1,0 +1,32 @@
+#app{
+    padding: 3em;
+}
+
+.iphone {
+    &-wrap {
+        margin: auto;
+        width: 23em;
+        height: 46em;
+        position: relative;
+    }
+    &-mask {
+        background: url("../assets/img/iphone-x-case.png");
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        position: absolute;
+        z-index: 9;
+        pointer-events: none;
+    }
+}
+
+.page-container {
+    padding: 1.5em;
+    height: 43em;
+
+    .title-page {
+        border-bottom: solid 2px #eee;
+        margin-top: 2.2em;
+    }
+
+}

@@ -45,6 +45,12 @@ export default class MainPage extends React.Component {
     .then((response) => response.json());
   }
   componentDidMount() {
+    const cache = sessionStorage.getItem('mainPageState') || null;
+
+    if (cache) {
+      return this.setState(JSON.parse(cache));
+    }
+
     this.getFoodList()
       .then(foodList => this.setState({ foodList }))
       .catch(error => this.setState({ errorMessage: error }));
@@ -53,6 +59,9 @@ export default class MainPage extends React.Component {
     return () => {
       sessionStorage.setItem(type, JSON.stringify(this.state[`${type}s`]));
     };
+  }
+  componentWillUnmount () {
+    sessionStorage.setItem('mainPageState', JSON.stringify(this.state));
   }
   render() {
     const {
@@ -74,22 +83,18 @@ export default class MainPage extends React.Component {
         <PhotoComponent onClickAction={this.handlePhotoAction.bind(this)} food={foodList[currentFoodIndex]} />
         <div className="bar-wrapper">
           <p className="sub-title text-white text-center">My recipes</p>
-          <Link to={{ pathname: 'list/dislike' }} onClick={ this.handleListClick('dislike') }>
             <BarChartComponent
               src="assets/img/icn_sad.svg"
               value={dislikesPercentage}
               color="#1640D3"
               amount={dislikes.length}
             />
-          </Link>
-          <Link to={{ pathname: 'list/like' }} onClick={ this.handleListClick('like') } >
             <BarChartComponent
               src="assets/img/icn_happy.svg"
               value={likesPercentage}
               color="#FC4553"
               amount={likes.length}
             />
-          </Link>
         </div>
       </div>
     );

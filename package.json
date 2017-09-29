@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node server/app.js",
+    "start": "node app.js",
     "build": "webpack",
     "watch": "webpack --watch",
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\""
@@ -18,7 +18,10 @@
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.6.0"
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

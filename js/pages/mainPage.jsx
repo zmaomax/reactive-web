@@ -34,7 +34,7 @@ export default class MainPage extends React.Component {
         this.setState({ likes, dislikes, currentFoodIndex });
     }
     getFoodList () {
-        return fetch("http:localhost:1234/")
+        return fetch("/food")
             .then((response) => response.json());
     }
     componentDidMount () {
